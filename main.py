@@ -4,8 +4,8 @@ import numpy as np
 import pandas as pd
 
 from config import SEED
-from generate_dimensoes import *
-from generate_fatos import *
+from data_generation.generate_dimensoes import *
+from data_generation.generate_fatos import *
 
 np.random.seed(SEED)
 
@@ -26,3 +26,4 @@ with pd.ExcelWriter("output/dados_sinteticos.xlsx", engine="openpyxl") as writer
     dContrato.to_excel(writer, sheet_name="dContrato", index=False)
     fDisponibilidade.to_excel(writer, sheet_name="fDisponibilidadeDiaria", index=False)
     fFinanceiro.to_excel(writer, sheet_name="fFinanceiroMensal", index=False)
+
